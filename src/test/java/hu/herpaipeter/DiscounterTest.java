@@ -17,4 +17,10 @@ public class DiscounterTest {
         assertEquals(0, discounter.getTotal(List.of()));
     }
 
+    @Test
+    void one_book_no_discount() {
+        Discounter discounter = new Discounter();
+        assertEquals(8, discounter.getTotal(List.of(1)));
+    }
+
 }
