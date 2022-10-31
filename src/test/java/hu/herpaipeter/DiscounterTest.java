@@ -1,0 +1,20 @@
+package hu.herpaipeter;
+
+import org.junit.jupiter.api.DisplayNameGeneration;
+import org.junit.jupiter.api.DisplayNameGenerator;
+import org.junit.jupiter.api.Test;
+
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+@DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
+public class DiscounterTest {
+
+    @Test
+    void empty_book_list_cost_zero() {
+        Discounter discounter = new Discounter();
+        assertEquals(0, discounter.getTotal(List.of()));
+    }
+
+}
