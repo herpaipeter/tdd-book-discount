@@ -20,12 +20,12 @@ public class DiscounterTest {
     @Test
     void one_book_no_discount() {
         Discounter discounter = new Discounter();
-        assertEquals(8, discounter.getTotal(List.of(1)));
+        assertEquals(discounter.getUnitPrice(), discounter.getTotal(List.of(1)));
     }
 
     @Test
     void same_book_twice_no_discount() {
         Discounter discounter = new Discounter();
-        assertEquals(16, discounter.getTotal(List.of(1, 1)));
+        assertEquals(2 * discounter.getUnitPrice(), discounter.getTotal(List.of(1, 1)));
     }
 }
