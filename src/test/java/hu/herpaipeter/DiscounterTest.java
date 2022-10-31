@@ -23,4 +23,9 @@ public class DiscounterTest {
         assertEquals(8, discounter.getTotal(List.of(1)));
     }
 
+    @Test
+    void same_book_twice_no_discount() {
+        Discounter discounter = new Discounter();
+        assertEquals(16, discounter.getTotal(List.of(1, 1)));
+    }
 }
