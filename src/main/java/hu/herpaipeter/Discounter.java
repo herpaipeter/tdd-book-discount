@@ -14,8 +14,13 @@ public class Discounter {
         if (items.size() == 2 && items.get(0) != items.get(1))
             total *= 0.95;
         if (items.size() == 3 && items.get(0) != items.get(1) &&
-            items.get(0) != items.get(2) && items.get(1) != items.get(2))
+                items.get(0) != items.get(2) && items.get(1) != items.get(2))
             total *= 0.90;
+        if (items.size() == 4 &&
+                items.get(0) != items.get(1) && items.get(0) != items.get(2) && items.get(0) != items.get(3) &&
+                items.get(1) != items.get(2) && items.get(1) != items.get(3) &&
+                items.get(2) != items.get(3))
+            total *= 0.85;
         return total;
     }
 
