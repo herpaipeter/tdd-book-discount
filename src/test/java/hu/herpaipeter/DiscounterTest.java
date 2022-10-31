@@ -28,4 +28,18 @@ public class DiscounterTest {
         Discounter discounter = new Discounter();
         assertEquals(2 * discounter.getUnitPrice(), discounter.getTotal(List.of(1, 1)));
     }
+
+    @Test
+    void two_different_books_5_percent_discount() {
+        Discounter discounter = new Discounter();
+        assertEquals(0.95 * 2 * discounter.getUnitPrice(),
+                discounter.getTotal(List.of(1, 2)));
+    }
+
+    @Test
+    void three_different_books_10_percent_discount() {
+        Discounter discounter = new Discounter();
+        assertEquals(0.90 * 3 * discounter.getUnitPrice(),
+                discounter.getTotal(List.of(1, 2, 3)));
+    }
 }

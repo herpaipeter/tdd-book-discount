@@ -9,8 +9,14 @@ public class Discounter {
     public int getUnitPrice() {
         return UNIT_PRICE;
     }
-    public int getTotal(List<Integer> items) {
-        return items.size() * UNIT_PRICE;
+    public double getTotal(List<Integer> items) {
+        double total = items.size() * UNIT_PRICE;
+        if (items.size() == 2 && items.get(0) != items.get(1))
+            total *= 0.95;
+        if (items.size() == 3 && items.get(0) != items.get(1) &&
+            items.get(0) != items.get(2) && items.get(1) != items.get(2))
+            total *= 0.90;
+        return total;
     }
 
 }
