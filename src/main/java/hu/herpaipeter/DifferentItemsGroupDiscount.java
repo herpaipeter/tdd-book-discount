@@ -12,8 +12,9 @@ public class DifferentItemsGroupDiscount {
     }
 
     public double getTotal(List<Integer> groupSizes) {
-        if (1 == groupSizes.size())
-            return (1.0 - (groupSizes.get(0) - 1) * 0.05) * groupSizes.get(0) * getUnitPrice();
-        return 0;
+        double total = 0.0;
+        for (int i = 0; i < groupSizes.size(); i++)
+            total += (1.0 - (groupSizes.get(i) - 1) * 0.05) * groupSizes.get(i) * getUnitPrice();
+        return total;
     }
 }
