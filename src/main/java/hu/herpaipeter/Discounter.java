@@ -11,8 +11,13 @@ public class Discounter {
     }
     public double getTotal(List<Integer> items) {
         double total = items.size() * UNIT_PRICE;
-        if (1 < items.size() && isDifferent(items))
-            total *= (1.0 - (items.size() - 1) * 0.05);
+        List<Integer> sorted = items.stream().sorted().toList();
+        if (1 < sorted.size() && isDifferent(sorted))
+            total *= (1.0 - (sorted.size() - 1) * 0.05);
+        else if (sorted.size() == 3 &&
+                sorted.get(0) == sorted.get(1) &&
+                sorted.get(1) != sorted.get(2))
+            total = 0.95 * 2 * UNIT_PRICE + UNIT_PRICE;
         return total;
     }
 

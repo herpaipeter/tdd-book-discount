@@ -56,4 +56,11 @@ public class DiscounterTest {
         assertEquals(0.80 * 5 * discounter.getUnitPrice(),
                 discounter.getTotal(List.of(1, 2, 3, 4, 5)));
     }
+
+    @Test
+    void three_books_two_same_5_percent_discount() {
+        Discounter discounter = new Discounter();
+        assertEquals(0.95 * 2 * discounter.getUnitPrice() + discounter.getUnitPrice(),
+                discounter.getTotal(List.of(1, 1, 2)));
+    }
 }
