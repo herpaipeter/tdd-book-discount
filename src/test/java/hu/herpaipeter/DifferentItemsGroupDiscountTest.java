@@ -13,19 +13,19 @@ public class DifferentItemsGroupDiscountTest {
 
     @Test
     void empty_group_costs_zero() {
-        DifferentItemsGroupDiscount differentItemsGroupDiscount = new DifferentItemsGroupDiscount();
-        assertEquals(0, differentItemsGroupDiscount.getTotal(List.of()));
+        DifferentItemsGroupDiscount groupDiscount = new DifferentItemsGroupDiscount();
+        assertEquals(0, groupDiscount.getTotal(List.of()));
     }
 
     @Test
     void one_group_size_one_costs_unit_price() {
-        DifferentItemsGroupDiscount differentItemsGroupDiscount = new DifferentItemsGroupDiscount();
-        assertEquals(8, differentItemsGroupDiscount.getTotal(List.of(1)));
+        DifferentItemsGroupDiscount groupDiscount = new DifferentItemsGroupDiscount();
+        assertEquals(groupDiscount.getUnitPrice(), groupDiscount.getTotal(List.of(1)));
     }
 
     @Test
     void one_group_size_two_has_5_percent_discount() {
-        DifferentItemsGroupDiscount differentItemsGroupDiscount = new DifferentItemsGroupDiscount();
-        assertEquals(0.95 * 2 * 8, differentItemsGroupDiscount.getTotal(List.of(2)));
+        DifferentItemsGroupDiscount groupDiscount = new DifferentItemsGroupDiscount();
+        assertEquals(0.95 * 2 * groupDiscount.getUnitPrice(), groupDiscount.getTotal(List.of(2)));
     }
 }
