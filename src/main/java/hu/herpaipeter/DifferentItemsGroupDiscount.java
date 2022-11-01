@@ -2,9 +2,9 @@ package hu.herpaipeter;
 
 import java.util.List;
 
-public class DiscountGroup {
+public class DifferentItemsGroupDiscount {
 
-    public DiscountGroup() {
+    public DifferentItemsGroupDiscount() {
     }
 
     public double getTotal(List<Integer> groupSizes) {
