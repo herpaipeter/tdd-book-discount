@@ -28,4 +28,10 @@ public class DifferentItemsGroupDiscountTest {
         DifferentItemsGroupDiscount groupDiscount = new DifferentItemsGroupDiscount();
         assertEquals(0.95 * 2 * groupDiscount.getUnitPrice(), groupDiscount.getTotal(List.of(2)));
     }
+
+    @Test
+    void one_group_size_3_has_10_percent_discount() {
+        DifferentItemsGroupDiscount groupDiscount = new DifferentItemsGroupDiscount();
+        assertEquals(0.90 * 3 * groupDiscount.getUnitPrice(), groupDiscount.getTotal(List.of(3)));
+    }
 }
