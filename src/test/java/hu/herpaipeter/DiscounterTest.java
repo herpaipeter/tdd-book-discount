@@ -44,16 +44,16 @@ public class DiscounterTest {
     }
 
     @Test
-    void four_different_books_15_percent_discount() {
+    void four_different_books_20_percent_discount() {
         Discounter discounter = new Discounter();
-        assertEquals(0.85 * 4 * discounter.getUnitPrice(),
+        assertEquals(0.80 * 4 * discounter.getUnitPrice(),
                 discounter.getTotal(List.of(1, 2, 3, 4)));
     }
 
     @Test
-    void five_different_books_20_percent_discount() {
+    void five_different_books_25_percent_discount() {
         Discounter discounter = new Discounter();
-        assertEquals(0.80 * 5 * discounter.getUnitPrice(),
+        assertEquals(0.75 * 5 * discounter.getUnitPrice(),
                 discounter.getTotal(List.of(1, 2, 3, 4, 5)));
     }
 

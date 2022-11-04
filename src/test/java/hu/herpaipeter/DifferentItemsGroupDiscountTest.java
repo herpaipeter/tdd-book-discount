@@ -38,13 +38,13 @@ public class DifferentItemsGroupDiscountTest {
     @Test
     void one_group_size_4_has_15_percent_discount() {
         DifferentItemsGroupDiscount groupDiscount = new DifferentItemsGroupDiscount();
-        assertEquals(0.85 * 4 * groupDiscount.getUnitPrice(), groupDiscount.getTotal(List.of(4)));
+        assertEquals(0.80 * 4 * groupDiscount.getUnitPrice(), groupDiscount.getTotal(List.of(4)));
     }
 
     @Test
     void one_group_size_5_has_20_percent_discount() {
         DifferentItemsGroupDiscount groupDiscount = new DifferentItemsGroupDiscount();
-        assertEquals(0.80 * 5 * groupDiscount.getUnitPrice(), groupDiscount.getTotal(List.of(5)));
+        assertEquals(0.75 * 5 * groupDiscount.getUnitPrice(), groupDiscount.getTotal(List.of(5)));
     }
 
     @Test
