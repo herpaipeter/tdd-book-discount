@@ -29,4 +29,15 @@ public class UniqueItemsGroupTest {
         assertEquals(List.of(List.of(List.of(1, 2, 3, 4))), uniqueItemsGroup.getGroupCombinations(List.of(1, 2, 3, 4)));
     }
 
+    @Test
+    void same_two_elements_generate_two_lists() {
+        UniqueItemsGroup uniqueItemsGroup = new UniqueItemsGroup();
+        assertEquals(List.of(List.of(List.of(1), List.of(1))), uniqueItemsGroup.getGroupCombinations(List.of(1, 1)));
+    }
+
+    @Test
+    void same_3_elements_generate_3_lists() {
+        UniqueItemsGroup uniqueItemsGroup = new UniqueItemsGroup();
+        assertEquals(List.of(List.of(List.of(1), List.of(1), List.of(1))), uniqueItemsGroup.getGroupCombinations(List.of(1, 1, 1)));
+    }
 }
