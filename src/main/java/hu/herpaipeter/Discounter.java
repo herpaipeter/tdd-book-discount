@@ -21,7 +21,7 @@ public class Discounter {
         return total;
     }
 
-    public boolean isDifferent(List<Integer> items) {
+    public static boolean isDifferent(List<Integer> items) {
         List<Integer> integers = items.stream().sorted().toList();
         for (int i = 0; i < integers.size() - 1; ++i)
             if (integers.get(i) == integers.get(i + 1))

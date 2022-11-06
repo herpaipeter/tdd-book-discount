@@ -22,4 +22,11 @@ public class UniqueItemsGroupTest {
         UniqueItemsGroup uniqueItemsGroup = new UniqueItemsGroup();
         assertEquals(List.of(List.of(List.of(1))), uniqueItemsGroup.getGroupCombinations(List.of(1)));
     }
+
+    @Test
+    void different_elements_generate_one_list() {
+        UniqueItemsGroup uniqueItemsGroup = new UniqueItemsGroup();
+        assertEquals(List.of(List.of(List.of(1, 2, 3, 4))), uniqueItemsGroup.getGroupCombinations(List.of(1, 2, 3, 4)));
+    }
+
 }
